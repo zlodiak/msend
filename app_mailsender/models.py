@@ -21,8 +21,8 @@ class Feedback(models.Model):
 	email = models.EmailField(
 		verbose_name=u"Email", 
 		max_length=100,
-		blank=True,
-		null=True,
+		blank=False,
+		null=False,
 		default=None,
 	)		
 	message = models.TextField(

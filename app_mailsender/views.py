@@ -2,6 +2,7 @@
 from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpResponseForbidden
 from django.template import loader, RequestContext
 from django.shortcuts import render, render_to_response
+from django.core.mail import send_mail
 
 from app_mailsender.models import Feedback
 from app_mailsender.forms import FeedbackForm
@@ -29,8 +30,15 @@ def feedback(request):
 					email=email.strip(), 
 					message=message.strip(), 
 				)
+
+				send_mail(
+					subject,
+					message,
+					'noreply@noreply.ru',
+					email,
+				)				
 			except:
-				pass
+				print('error in try block')
 			else:
 				t = loader.get_template('page_feedback_ok.html')
 				c = RequestContext(request, {})	
