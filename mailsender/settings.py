@@ -86,3 +86,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+EMAIL_HOST = 'kinopomoika.djangohost.name'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mailsender@kinopomoika.djangohost.name'
+EMAIL_HOST_PASSWORD = 'dfgdfg5'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
