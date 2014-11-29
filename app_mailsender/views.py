@@ -34,8 +34,8 @@ def feedback(request):
 				send_mail(
 					subject,
 					message,
-					'noreply@noreply.ru',
-					email,
+					email,							# sender email
+					['mailsender2015@yandex.ru'], 	# my email
 				)				
 			except:
 				print('error in try block')
