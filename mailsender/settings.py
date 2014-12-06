@@ -61,28 +61,28 @@ WSGI_APPLICATION = 'mailsender.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mailsender',
-        'USER': 'mailsender',
-        'PASSWORD': 'mailsender',
-        'HOST': '',
-        'PORT': '',
-        'OPTIONS': {
-            'init_command': 'SET storage_engine=INNODB',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mailsender',
+#         'USER': 'mailsender',
+#         'PASSWORD': 'mailsender',
+#         'HOST': '',
+#         'PORT': '',
+#         'OPTIONS': {
+#             'init_command': 'SET storage_engine=INNODB',
+#         },
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

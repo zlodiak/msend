@@ -31,12 +31,12 @@ def feedback(request):
 					message=message.strip(), 
 				)
 
-				send_mail(
-					subject,
-					message,
-					['mailsender2015@yandex.ru'], 	# my email
-					email,							# sender email
-				)				
+				# send_mail(
+				# 	subject,
+				# 	message,
+				# 	['mailsender2015@yandex.ru'], 	# my email
+				# 	email,							# sender email
+				# )				
 			except:
 				print('error in try block')
 			else:
