@@ -1,3 +1,3 @@
 include LICENSE
 include README.rst
-recursive-include polls/templates *
+recursive-include app_mailsender/templates *
