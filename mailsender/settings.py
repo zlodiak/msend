@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'app_mailsender',
+    'mailsend',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,7 +50,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'app_mailsender', 'templates'),
+    os.path.join(BASE_DIR, 'mailsend', 'templates'),
 )
 
 ROOT_URLCONF = 'mailsender.urls'
@@ -110,3 +110,24 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'mailsender@kinopomoika.djangohost.name'
 EMAIL_HOST_PASSWORD = 'dfgdfg5'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
