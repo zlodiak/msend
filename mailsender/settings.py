@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'app_mailsender',
     'mailsend',
 )
 
@@ -51,6 +52,7 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'mailsend', 'templates'),
+    os.path.join(BASE_DIR, 'app_mailsender', 'templates'),
 )
 
 ROOT_URLCONF = 'mailsender.urls'
@@ -68,6 +70,17 @@ DATABASES = {
     }
 }
 
+
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'mailsender', 'static'),
+)
+SITE_ID = 1
 
 
 # DATABASES = {
@@ -98,10 +111,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
 
 
 

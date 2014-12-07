@@ -4,7 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('app_mailsender',
-	url(r'^$', 'views.feedback', name='feedback'),
+	url(r'^$', 'views.index', name='index'),
 )
 
 
