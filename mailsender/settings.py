@@ -39,6 +39,11 @@ INSTALLED_APPS = (
 
     'app_mailsender',
     'mailsend',
+    'filer',
+    'mptt',
+    'easy_thumbnails',
+    'calendarium',
+    'south',    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,6 +58,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'mailsend', 'templates'),
     os.path.join(BASE_DIR, 'app_mailsender', 'templates'),
+    os.path.join(BASE_DIR, 'calendarium', 'templates'),
 )
 
 ROOT_URLCONF = 'mailsender.urls'
